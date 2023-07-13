@@ -10,7 +10,7 @@
 
 <h3> Live site preview : </h3>
 
-[Visite the site](https://rainbow-piroshki-c17a01.netlify.app/)
+
 
 
 
