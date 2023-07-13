@@ -6,11 +6,10 @@
 1.  Users can enter a total budget amount and save it for tracking their expenses.<br/>
 2.  Users can add expenses, and the application calculates the total expenditure and remaining balance.<br/>
 3.  The application displays a list of expenses, including the product name and amount. Users can edit or delete items from the list.<br/>
-4.  A bar chart visually represents the budget, total expenditure, and remaining balance, providing a clear overview of the financial status.
 
-<h3> Live site preview : </h3>
+<h3> Live site preview : https://budget-finance-tracker-main.vercel.app/ </h3>
 
-[Visite the site](https://rainbow-piroshki-c17a01.netlify.app/)
+
 
 
 
