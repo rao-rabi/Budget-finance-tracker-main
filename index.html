@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Budget App | Track your Money</title>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  <!-- Other code -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
+  <!-- animista -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon" />
+  <meta name="description" content="Effortlessly 
+    manage your finances with our user-friendly Personal 
+    Finance Tracker. Add, edit, and delete transactions with ease, 
+    while tracking your current balance in real-time. Take control 
+    of your money and 
+    start achieving your financial goals today!" />
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg mb-0 position-fixed top-0 z-3 p-md-4 w-100">
+    <div class="container">
+      <div class="logo d-flex align-items-center ">
+        <img src="assets/Fluid.png" width="45" height="45" style="padding-right: 5px; object-fit: contain" alt="" />
+        <h1 style="color: #782beb; font-size: 26px;" class="navbar-brand">Budget App</h1>
+      </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#btn"
+            aria-expanded="false">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="btn">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link me-2 fw-bold text-white fs-5" href="#hero">Home</a></li>
+              <li class="nav-item"><a class="nav-link me-2 fw-bold text-white fs-5" href="#track">Track</a></li>
+              <li class="nav-item"><a class="nav-link me-2 fw-bold text-white fs-5" href="#graph-section">Graph</a></li>
+              <li class="nav-item"><a class="nav-link me-2 fw-bold text-white fs-5" href="#reminder-section">Reminder</a></li>
+              <li class="nav-item"><a class="nav-link me-2 fw-bold text-white fs-5" href="#contact-us">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+  <!-- hero section  -->
+
+  <div class="main" style="background-color: rgba(150, 3, 150, 0.548);">
+    <div class="hero" id="hero">
+      <div class="dis">
+        <h3 class="fw-bold overflow-hidden">Personal Finance Tracker</h3>
+        <p>
+          Effortlessly manage your finances with our user-friendly
+          Personal Finance Tracker. Add, edit, and delete transactions
+          with ease, while tracking your current balance in real-time.
+          Take control of your money and start achieving your financial
+          goals today!
+        </p>
+      </div>
+
+      <div class="img" data-aos="flip-right">
+        <img
+          src="https://img.freepik.com/free-vector/people-analyzing-growth-charts_23-2148866843.jpg?w=1060&t=st=1686308109~exp=1686308709~hmac=9a2217459a32dad5dcdddf69da4aed30b2ee542c6e03e66fbadca5046d40195c"
+          alt="reference image" />
+      </div>
+    </div>
+
+  </div>
+  <!-- Track -->
+  <div class="budget" id="track" style="background: linear-gradient(to right, purple, rgb(0, 255, 221));">
+    <h2 class="track-heading track overflow-hidden">Track Your Finance</h2>
+    <div class="sub-container">
+      <!-- Budget -->
+
+      <div class="total-amount-container">
+        <h3 class="overflow-hidden">Budget</h3>
+        <p class="hide error" id="budget-error">
+          Value cannot be empty or negative
+        </p>
+        <input type="number" id="total-amount" placeholder="Enter Total Amount" style="padding: 15px; width: 100%;" />
+        <button class="submit" id="total-amount-button"
+          style="background-color: #782beb; font-weight: bold; box-shadow: 0px 0px 10px purple;">
+          Set Budget
+        </button>
+      </div>
+
+      <!-- Expenditure -->
+      <div class="user-amount-container">
+        <h3 class="overflow-hidden">Expenses</h3>
+        <p class="hide error" id="product-title-error">
+          Values cannot be empty
+        </p>
+        <input type="text" class="product-title" id="product-title" placeholder="Enter Title of Product"
+          style="padding: 15px; width: 100%;" />
+        <input type="number" id="user-amount" placeholder="Enter Cost of Product" style="padding: 15px;width: 100%;" />
+        <button class="submit" id="check-amount"
+          style="background-color: #782beb; font-weight: bold; box-shadow: 0px 0px 10px purple;">Add
+          Amount</button>
+      </div>
+    </div>
+
+    <!-- Output -->
+    <div class="output-container flex-space">
+      <div>
+        <p>Total Budget</p>
+        <span id="amount">0</span>
+      </div>
+      <div>
+        <p>Expenses</p>
+        <span id="expenditure-value">0</span>
+      </div>
+      <div>
+        <p>Balance</p>
+        <span id="balance-amount">0</span>
+      </div>
+    </div>
+
+    <!-- List -->
+    <div class="list">
+      <h3 class="overflow-hidden">Expense List</h3>
+      <div class="list-container" id="list"></div>
+    </div>
+  </div>
+
+  <!-- <div class="graph-section" id="graph-section" style="background:linear-gradient(to right, rgb(0, 255, 221),purple);">
+    <h2 class="graph-heading overflow-hidden">Visualize Your Financial Progress</h2>
+    <p>
+      Track expenses, monitor balance, and make informed decisions with
+      our interactive bar graph.
+    </p>
+    <canvas class="graph" id="myChart" style="width: 100%; max-width: 600px; background-color:#2fdeb8;"></canvas>
+    <div class="graph-container" id="graph"></div>
+  </div> -->
+
+  <!-- add reminder -->
+
+  <div class="section-4">
+    <div class="reminder-section" id="reminder-section">
+      <h2 class="overflow-hidden">Reminder Section</h2>
+      <p>
+        Add your reminder and never forget to pay your bills on time.
+      </p>
+      <input type="text" id="reminder-name" maxlength="30" placeholder="Reminder Name" required />
+      <input type="date" id="reminder-date" placeholder="Select Date: 2023-06-10" required />
+      <input type="time" id="reminder-time" placeholder="Hour : Minutes" required />
+      <button id="add-reminder-btn"  style="background-color: #782beb; font-weight: bold; box-shadow: 0px 0px 10px purple;">Add Reminder</button>
+    </div>
+
+    <ul id="reminder-list"></ul>
+  </div>
+
+  <!-- contact us form -->
+  <div class="contact-us" id="contact-us">
+    <h2 class="overflow-hidden">Contact Us</h2>
+    <p>Send us your feedback and suggestions.</p>
+    <form action="mailto:rabirao1039@gmail.com">
+      <input type="text" name="name" id="name" placeholder="Enter your name" required />
+      <input type="email" name="email" id="email" placeholder="Enter your email" required />
+      <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter your message" required></textarea>
+      <button type="submit" name="submit" class="submit"
+        style="background-color: #782beb; font-weight: bold; box-shadow: 0px 0px 10px purple;">
+        Send Message
+      </button>
+    </form>
+  </div>
+
+  <!-- html code for footer -->
+  <footer style="background: linear-gradient(to left, black, purple);">
+    <div class="footer-container">
+      <div class="footer-logo d-flex align-items-center">
+        <img src="assets/Fluid.png" width="50" height="50" alt="">
+        <h1 class="overflow-hidden">Budget App</h1>
+      </div>
+
+      <div class="footer-social">
+        <ul>
+          <li>
+            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+          </li>
+          <li>
+            <a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#track">Track</a></li>
+        <li><a href="#graph-section">Graph</a></li>
+        <li><a href="#reminder-section">Reminder</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-line"></div>
+
+    <div class="footer-bottom">
+      <div>
+        <p>All rights reserved. &copy; 2023 Budget App</p>
+      </div>
+      <div class="footer-git">
+        <p>
+          Designed by
+          <a href="https://github.com/rao-rabi" target="_blank">Rao Rabi & Malik Zohaib</a>
+        </p>
+        <p class="git-icon">
+          <a href="https://github.com/rao-rabi" target="_blank"><i class="fab fa-github"></i></a>
+        </p>
+      </div>
+    </div>
+  </footer>
+  </div>
+
+  <!-- Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/vfs_fonts.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <script src="index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

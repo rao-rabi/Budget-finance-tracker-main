@@ -1,0 +1,716 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color-scheme: light dark;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+body {
+  background-color: white;
+  color: black;
+}
+nav {
+  background: linear-gradient(to left, purple, black);
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%282, 151, 238, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.nav-link{
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  letter-spacing: 2px;
+}
+
+
+.hero p {
+  width: 80%;
+  text-align: center;
+}
+
+.hero {
+  min-height: 100vh;
+  color: black;
+  width: 100vw;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dis {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  gap: 12px;
+}
+.hero div {
+  width: 50%;
+  margin: auto;
+}
+
+.img img {
+  width: 500px;
+  height: 400px;
+  border-radius: 20px;
+}
+
+.img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.budget {
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  padding-top: 7.5% !important;
+  padding-bottom: 7.5%;
+  background-color: #f5f5f5;
+  margin: auto;
+  /* padding: 1rem; */
+  /* min-height: 100vh; */
+}
+
+.budget h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  display: inline-block;
+  border-bottom: 4px solid purple;
+  margin-top: 20px;
+}
+
+.sub-container {
+  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3em;
+  margin: auto;
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+.flex-space {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrapper h3 {
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 0.6em;
+}
+.container input {
+  display: block;
+  width: 100%;
+  padding: 0.6em 0.3em;
+  color: black;
+  background-color: #ffffff;
+  border-radius: 0.3em;
+  outline: none;
+  font-weight: 400;
+  margin-bottom: 0.6em;
+  border: none;
+}
+
+.total-amount-container,
+.user-amount-container {
+  background: rgba(7, 0, 0, 0.199);
+  padding: 2.25em 1.3em;
+  border-radius: 0.7em;
+  box-shadow: 0 0.6em 1.2em rgba(28, 0, 80, 0.06);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 3px solid purple;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+}
+.output-container {
+  width: 80%;
+  background-color: #2fdeb8;
+  color: black;
+  border-radius: 0.3em;
+  box-shadow: 0 0.6em 1.2em rgba(28, 0, 80, 0.06);
+  margin: auto;
+  padding: 1.2em;
+  margin-top: 1.2rem;
+}
+.output-container p {
+  font-weight: 500;
+  margin-bottom: 0.6em;
+}
+.output-container span {
+  display: block;
+  text-align: center;
+  font-weight: 400;
+  color: black;
+}
+.submit {
+  position: relative;
+  font-size: 1em;
+  margin-top: 0.8em;
+  background-color: #587ef4;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  padding: 0.6em 1.2em;
+  border-radius: 0.3em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit:hover {
+  background-color: #4f6be0;
+}
+
+.list {
+  width: 80%;
+  background-color: #ffffff;
+  padding: 1.8em 1.2em;
+  box-shadow: 0 0.6em 1.2em rgba(28, 0, 80, 0.1);
+  border-radius: 0.6em;
+  margin: auto;
+  margin-top: 1.2rem;
+  margin-bottom: 20px;
+}
+.sublist-content {
+  width: 100%;
+  border-left: 0.3em solid #587ef4;
+  margin-bottom: 0.6em;
+  padding: 0.5em 1em;
+  display: grid;
+  grid-template-columns: 3fr 2fr 1fr 1fr;
+}
+.product {
+  font-weight: 500;
+  color: #363d55;
+}
+.amount {
+  color: #414a67;
+  margin-left: 20%;
+}
+.icons-container {
+  width: 5em;
+  margin: 1.2em;
+  align-items: center;
+}
+.product-title {
+  margin-bottom: 1em;
+}
+.hide {
+  display: none;
+}
+.error {
+  color: #ff465a;
+  margin-bottom: 3px;
+}
+.edit {
+  margin-left: auto;
+}
+.edit,
+.delete {
+  background: transparent;
+  cursor: pointer;
+  margin-right: 1.5em;
+  border: none;
+  color: #587ef4;
+}
+/* .graph-section {
+  min-height: 100vh;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 13%;
+}
+.graph-section p {
+  width: 80%;
+  color: #0d4035;
+  font-weight: 200;
+  font-size: 17px;
+  text-align: center;
+}
+.graph-heading {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  border-bottom: 4px solid purple;
+}
+.graph {
+  background-color: #ffffff;
+  padding: 1.8em 1.2em;
+  box-shadow: 0 0.6em 1.2em rgba(28, 0, 80, 0.06);
+  border-radius: 0.6em;
+  margin: auto;
+  margin-top: 1.3rem;
+}
+ */
+.section-4 {
+  width: 100vw;
+  background-color: rgba(150, 3, 150, 0.548);
+  padding-top: 2%;
+  margin: auto;
+}
+
+.reminder-section {
+  min-height: 100vh;
+  width: 60%;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.reminder-section p {
+  font-size: 20px;
+  margin-bottom: 0.6em;
+}
+
+.reminder-section h2 {
+  margin-top: 0;
+  display: inline-block;
+  border-bottom: 4px solid purple;
+}
+
+.reminder-section input[type="text"],
+.reminder-section input[type="date"],
+.reminder-section input[type="time"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: none;
+  background-color: #333;
+  color: #fff;
+}
+
+.reminder-section input[type="text"]::placeholder,
+.reminder-section input[type="date"]::placeholder,
+.reminder-section input[type="time"]::placeholder {
+  color: #ccc;
+}
+
+.reminder-section button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #587ef4;
+  color: white;
+  cursor: pointer;
+}
+
+/* Reminder list */
+#reminder-list {
+  width: 60%;
+  list-style: none;
+  margin: auto;
+  margin-top: 20px;
+  padding: 0;
+}
+
+#reminder-list li {
+  margin-bottom: 10px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+}
+.reminder-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #333;
+  gap: 10px;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.reminder-name {
+  margin: 0;
+}
+
+.reminder-date {
+  margin: 0;
+}
+
+.delete-button {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: 10px;
+  margin-right: 20px;
+}
+#reminder-list li::before {
+  content: "\2022";
+  color: #008080;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+#reminder-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* css footer in html */
+footer {
+  width: 100%;
+  height: 350x;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  padding: 10px;
+  margin: auto;
+}
+.footer-logo {
+  font-size: 1rem;
+  font-weight: 400;
+}
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-right: 20px;
+  transition: all 0.3s ease-in-out;
+}
+.footer-links a:hover {
+  text-shadow: 0px 0px 10px #587ef4;
+  letter-spacing: 1px;
+}
+.footer-social ul {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease-in-out;
+}
+.footer-social a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+.footer-social a:hover {
+  color: #587ef4;
+}
+.footer-social i {
+  font-size: 1.5rem;
+  margin-right: 10px;
+  transition: all 0.3s ease-in-out;
+}
+.footer-social i:hover {
+  color: #587ef4;
+}
+.footer-social p {
+  position: absolute;
+  bottom: 0px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.footer-social p:hover {
+  color: #587ef4;
+}
+
+.footer-line {
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  padding: 5px;
+  margin: auto;
+}
+.footer-git p a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+.footer-git {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.git-icon {
+  font-size: 1.5rem;
+  padding: 4px;
+}
+
+/* contact-us css */
+.contact-us {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(to left, purple, cyan);
+  color: black;
+  text-align: center;
+  margin: auto;
+  padding-top: 10%;
+}
+.contact-us h2 {
+  display: inline-block;
+  border-bottom: 4px solid purple;
+}
+.contact-us p {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.contact-us form {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 20px;
+}
+.contact-us form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  background: transparent;
+  outline: none;
+  font-size: 1rem;
+  font-weight: 400;
+}
+.contact-us form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #333;
+  background: transparent;
+  color: black;
+  border-radius: 4px;
+  outline: none;
+  font-size: 1rem;
+  font-weight: 400;
+}
+.submitbtn {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  background-color: #333;
+  color: white;
+  border-radius: 4px;
+  outline: none;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.submitbtn:hover {
+  background-color: #587ef4;
+  color: white;
+}
+/* css media query */
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .footer-bottom,
+  .footer-git {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .wrapper {
+    font-size: 14px;
+  }
+  .sub-container {
+    grid-template-columns: 1fr;
+    gap: 1em;
+  }
+  .graph-section p {
+    font-size: 15px;
+    text-align: center;
+  }
+  .graph {
+    width: 100%;
+  }
+  .list {
+    padding: 2px;
+    width: 80%;
+  }
+  .edit,
+  .delete {
+    font-size: 12px;
+  }
+  .delete {
+    margin-right: 0px;
+  }
+  .hero p,
+  .graph-heading p {
+    font-size: 16px;
+  }
+  .hero h1,
+  .graph-heading {
+    font-size: 1.6rem;
+  }
+  .graph-heading {
+    font-size: 1.3rem;
+  }
+  .reminder-section,
+  .contact-us {
+    width: 100%;
+  }
+  .reminder-section h2 {
+    font-size: 1.6rem;
+  }
+  .reminder-section p {
+    font-size: 16px;
+  }
+  .img img {
+    height: auto;
+  }
+  .section-4 {
+    width: 100%;
+  }
+  .reminder-list {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .hero {
+    margin-top: 70px;
+    flex-direction: column;
+  }
+  .hero div {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 12px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .reminder-section,
+  #reminder-list {
+    width: 50%;
+  }
+}
+
+/* For screens smaller than 768px */
+@media (max-width: 767px) {
+  .footer-container {
+    flex-direction: column;
+  }
+
+  .footer-links {
+    margin-top: 20px;
+  }
+
+  .footer-social {
+    margin-top: 20px;
+  }
+}
+
+/* For screens smaller than 576px */
+@media (max-width: 575px) {
+  .footer-logo {
+    font-size: 1rem;
+  }
+
+  .footer-links a,
+  .footer-social a {
+    font-size: 0.9rem;
+  }
+
+  .footer-social i {
+    font-size: 1.2rem;
+  }
+
+  .footer-social p {
+    font-size: 0.9rem;
+  }
+  .output-container,
+  .user-amount-container,
+  .total-amount-container,
+  .list {
+    width: 100%;
+  }
+}
+
+/* For screens smaller than 400px */
+@media (max-width: 399px) {
+  .footer-logo {
+    font-size: 0.8rem;
+  }
+
+  .footer-links a,
+  .footer-social a {
+    font-size: 0.8rem;
+  }
+
+  .footer-social i {
+    font-size: 1rem;
+  }
+
+  .footer-social p {
+    font-size: 0.8rem;
+  }
+  .nav-links-hamburger {
+    inset: 40% 0px 1px;
+  }
+  /* write css to remove min-height from all the sections */
+  .hero,
+  .graph-section,
+  .reminder-section,
+  .contact-us {
+    min-height: 0;
+  }
+  
+}
+
+/* media quaries for contact form */
+@media screen and (max-width: 600px) {
+  .contact-us,
+  .reminder-section,
+  #reminder-list {
+    width: 100%;
+    padding: 1%;
+  }
+  .sub-container{
+    width: 95%;
+  }
+}
+
+.list-item-separator{
+  border-left: 5px solid cyan;
+  margin-bottom: 5px;
+}
